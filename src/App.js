@@ -11,6 +11,9 @@ class App extends React.Component{
 
       let formData = new FormData()
       formData.append('avatar', file)
+      axios.post(`http://localhost:3008/upload/avater`, formData)
+      .then(res=>{res=>console.log(res.data)})
+      .catch(err => console.log(err))
       }
     reader.readAsDataURL(file)
   }
