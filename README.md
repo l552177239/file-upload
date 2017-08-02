@@ -69,3 +69,13 @@ formData.append('avatar', file)
 ```
 
 这样保证表单的编码类型为 multipart/form-data
+
+### 将数据上传
+
+利用 axios 将文件上传发送到服务器
+
+```
+axios.post(` http://yummy.haoduoshipin.com/avater`, {avatar:formData, userId: `liu`})
+  .then(res=>{res=>console.log(res.data)})
+  .catch(err => console.log(err))
+```

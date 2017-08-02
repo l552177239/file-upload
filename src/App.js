@@ -7,14 +7,13 @@ class App extends React.Component{
     const file = e.target.files[0]
     let reader = new FileReader()
     reader.onload = (event) => {
-      console.log(event.target.result)
-
       let formData = new FormData()
       formData.append('avatar', file)
-      axios.post(`http://localhost:3008/upload/avater`, formData)
-      .then(res=>{res=>console.log(res.data)})
-      .catch(err => console.log(err))
-      }
+      formData.append('userId', 'liu')
+      axios.post(`http://yummy.haoduoshipin.com/avater`, formData)
+        .then(res=>{res=>console.log(res.data)})
+        .catch(err => console.log(err))
+    }
     reader.readAsDataURL(file)
   }
   render(){
