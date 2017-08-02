@@ -27,7 +27,7 @@ handleChange = (e) => {
 }
 ```
 
-
+选择成功后，控制台输出文件地址，文件名等信息
 
 ### 拿到文件数据
 
@@ -37,9 +37,14 @@ handleChange = (e) => {
 handleChange = (e) => {
   const file = e.target.files[0]
   let reader = new FileReader()
+  //声明一个 FileReader 对象
   reader.onload = (event) => {
+  //当资源及其依赖资源完成加载时，触发 FileReader.onload 属性
     console.log(event.target.result)
-    }
+  }
   reader.readAsDataURL(file)
+  //将读取到的文件编码成Data URL，并触发 onload
 }
 ```
+
+如果加载成功，控制台会输出编码为`base-64`的文件
