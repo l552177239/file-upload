@@ -4,7 +4,12 @@ import './App.css'
 class App extends React.Component{
   handleChange = (e) => {
     const file = e.target.files[0]
-    console.log(file)
+    let reader = new FileReader()
+    reader.onload = (event) => {
+      console.log(event.target.result)
+
+      }
+    reader.readAsDataURL(file)
   }
   render(){
     return(
