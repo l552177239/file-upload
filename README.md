@@ -48,3 +48,24 @@ handleChange = (e) => {
 ```
 
 如果加载成功，控制台会输出编码为`base-64`的文件
+
+### 将数据转换为可传输数据
+
+通过FormData对象可以组装一组用 XMLHttpRequest发送请求的键/值对。它可以更灵活方便的发送表单数据，因为可以独立于表单使用。如果你把表单的编码类型设置为multipart/form-data ，就可以进行文件的传输
+
+因为 axios 不能进行文件的直接进行请求发送，这样我们需要利用 form 来进行数据传输
+
+为了更灵活的发送表单数据（当然也可以用`<form>`标签进行包裹）我们需要声明一个新的 FormData对象
+
+```js
+let formData = new FormData()
+```
+
+调用 formData 的 append() 方法进行添加文件
+
+```js
+formData.append('avatar', file)
+//调用 formData 的 append() 方法添加文件
+```
+
+这样保证表单的编码类型为 multipart/form-data

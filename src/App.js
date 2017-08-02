@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import './App.css'
 
 class App extends React.Component{
@@ -8,6 +9,8 @@ class App extends React.Component{
     reader.onload = (event) => {
       console.log(event.target.result)
 
+      let formData = new FormData()
+      formData.append('avatar', file)
       }
     reader.readAsDataURL(file)
   }
