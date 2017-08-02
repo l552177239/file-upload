@@ -75,7 +75,7 @@ formData.append('avatar', file)
 利用 axios 将文件上传发送到服务器
 
 ```
-axios.post(` http://yummy.haoduoshipin.com/avater`, {avatar:formData, userId: `liu`})
+axios.post(` http://yummy.haoduoshipin.com/avater`, formData)
   .then(res=>{res=>console.log(res.data)})
   .catch(err => console.log(err))
 ```
