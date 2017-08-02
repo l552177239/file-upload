@@ -2,8 +2,9 @@ import React from 'react'
 import './App.css'
 
 class App extends React.Component{
-  handleChange = () => {
-    console.log(1)
+  handleChange = (e) => {
+    const file = e.target.files[0]
+    console.log(file)
   }
   render(){
     return(
