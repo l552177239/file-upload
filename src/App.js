@@ -3,11 +3,6 @@ import axios from 'axios'
 import './App.css'
 
 class App extends React.Component{
-  login = () => {
-    axios.put(`http://yummy.haoduoshipin.com/user`, { slogan: `求成功`, username:`liu`})
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err))
-  }
   handleChange = (event) => {
     const file = event.target.files[0]
     const reader = new FileReader()
@@ -26,7 +21,6 @@ class App extends React.Component{
     return(
       <div className="App">
         <input type='file' className='file-input' onChange={this.handleChange} />
-        <input type='button' className='file-input' value='登录' onClick={this.login} />
       </div>
     )
   }
