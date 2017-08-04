@@ -15,8 +15,9 @@ class App extends React.Component{
     reader.onload = (event) => {
       formData.append('avatar', file)
       formData.append('userId', '5982ceac16f47145ed017562')
-      axios.post(`http://yummy.haoduoshipin.com/avatar`, formData)
-        .then(res => console.log(1,res.data))
+      console.log(file,event.target.result)
+      axios.post(`http://yummy.haoduoshipin.com/avatar`, {avatar:file, userId:'5982ceac16f47145ed017562'})
+        .then(res => console.log(res.data))
         .catch(err => console.log(err))
     }
     reader.readAsDataURL(file)
