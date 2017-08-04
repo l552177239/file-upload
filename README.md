@@ -79,3 +79,14 @@ axios.post(` http://yummy.haoduoshipin.com/avatar`, formData)
   .then(res=>{res=>console.log(res.data)})
   .catch(err => console.log(err))
 ```
+### 添加 store
+
+用 redux 将数据放在 store 里
+
+代码参考：[点击查看](https://github.com/l552177239/file-upload/commit/db572da440c145bc7a636083c2828132cc7eaa0a)
+
+具体请参考笔记第六章 React-Redux
+
+### 数据注入
+
+使用 React-redux 将数据注入组件

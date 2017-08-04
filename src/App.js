@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from 'axios'
+import store from './redux/store'
+import { Provider } from 'react-redux'
 import './App.css'
+
 
 class App extends React.Component{
   handleChange = (event) => {
@@ -19,9 +22,11 @@ class App extends React.Component{
   }
   render(){
     return(
-      <div className="App">
-        <input type='file' className='file-input' onChange={this.handleChange} />
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <input type='file' className='file-input' onChange={this.handleChange} />
+        </div>
+      </Provider>
     )
   }
 }
