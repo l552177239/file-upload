@@ -1,32 +1,33 @@
 import React from 'react'
 import axios from 'axios'
+import setting from './setting'
 import store from './redux/store'
 import { Provider } from 'react-redux'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
 import './App.css'
+import User from './User'
 
+const Home = () => <div className='home'><Link to='/user'>个人中心</Link></div>
 
 class App extends React.Component{
-  handleChange = (event) => {
-    const file = event.target.files[0]
-    const reader = new FileReader()
-    let formData = new FormData()
-    reader.onload = (event) => {
-      formData.append('avatar', file)
-      formData.append('userId', '5982ceac16f47145ed017562')
-      console.log(file,event.target.result)
-      axios.post(`http://yummy.haoduoshipin.com/avatar`, {avatar:file, userId:'5982ceac16f47145ed017562'})
-        .then(res => console.log(res.data))
-        .catch(err => console.log(err))
-    }
-    reader.readAsDataURL(file)
+  componentWillMount(){
+    console.log('5982ceac16f47145ed017562')
+  }
+  componentDidMount(){
+    axios.get(`${setting.host}/users`)
+    .then(res => store.dispatch({type:'LOAD_USERS', users:res.data}))
+    .catch(err => alert('请求失败'))
   }
   render(){
     return(
-      <Provider store={store}>
-        <div className="App">
-          <input type='file' className='file-input' onChange={this.handleChange} />
-        </div>
-      </Provider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <div className="app">
+              <Route exact path='/' component={Home} />
+              <Route path='/user' component={User} />
+          </div>
+        </Provider>
+      </BrowserRouter>
     )
   }
 }

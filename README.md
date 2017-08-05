@@ -90,3 +90,11 @@ axios.post(` http://yummy.haoduoshipin.com/avatar`, formData)
 ### 数据注入
 
 使用 React-redux 将数据注入组件
+
+代码参考：[点击查看](https://github.com/l552177239/file-upload/commit/f82dc7779dab3253c5fc2f80b09c0b25d8416292)
+
+具体请参考笔记第六章 第八小节
+
+### 进行数据结构调整并添加路由
+
+使用 react-router 添加路由

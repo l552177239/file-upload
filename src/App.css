@@ -1,4 +1,30 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+.app{
+}
+.home{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: teal;
+  align-items: center;
+  justify-content: center;
+}
+.home a{
+  color: #F77062;
+  display: block;
+  font-size: 18px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+}
+.home
+.home a:hover{
+  opacity: 0;
+  transition: opacity .1s ease;
 }
